@@ -6,6 +6,7 @@
       <meta name="title" content="PcAMedida">
       <meta name="description" content="PcAMedida">
       <link rel="stylesheet" type="text/css" href="estilo.css">
+      <script type="text/javascript" src="formPcMedida.js"></script>
   </head> 
   <header>
     <h1>CREA TU PC A MEDIDA</h1>
@@ -20,20 +21,20 @@
   </header>
   <div>
     <h3> Rellena el formulario </h3>
-    <form>
-      <label for="nombre">Nombre:</label><br>
-      <input type="text" id="nombre" name="nombre" placeholder="Introduzca nombre"><br><br>
+    <form id="formMedida" action="" method="get" onsubmit=validarPC()>
+      <label for="nm">Nombre:</label><br>
+      <input type="text" id="nombre" placeholder="Introduzca nombre" required><br><br>
 
-      <label for="apellidos">Apellidos:</label><br>
-      <input type="text" id="apellidos" name="apellidos" placeholder="Introduzca apellidos"><br><br>
-      
-      <label for="correo">Email:</label><br>
-      <input type="text" id="correo" name="email" placeholder="Introduzca correo"><br><br>
-      
+      <label for="ap">Apellidos:</label><br>
+      <input type="text" id="apellidos" placeholder="Introduzca apellidos" required><br><br>
+
+      <label for="em">Email:</label><br>
+      <input type="text" id="correo" placeholder="Introduzca correo" required><br><br>
+
       <label >Explique especificaciones y precio:</label><br>
-      <textarea name="presupuesto" rows="5" cols="50" placeholder="Mensaje"></textarea><br><br>
-      
-      <input type="button" value="Enviar">
+      <textarea id="presupuesto" rows="5" cols="50" placeholder="Mensaje max(500car)."></textarea><br><br>
+
+      <input type="submit" value="Enviar">
       <input type="reset" value="Borrar">
     </form>
   </div>

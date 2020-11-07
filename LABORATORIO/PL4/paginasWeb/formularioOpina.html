@@ -6,6 +6,7 @@
       <meta name="title" content="Opina">
       <meta name="description" content="Opina">
       <link rel="stylesheet" type="text/css" href="estilo.css">
+      <script type="text/javascript" src="formPcMedida.js"></script>
     </head> 
   <header>
     <h1>DEJANOS TU OPINION</h1>
@@ -20,15 +21,15 @@
   </header>
   <div>
     <h3> Rellena el formulario </h3>
-    <form>
-      <label for="nombre">Nombre:</label><br>
-      <input type="text" id="nombre" name="nombre" placeholder="Introduzca nombre"><br><br>
+    <form id="formOpina" action="" method="get" onsubmit=validarOpina()>
+      <label>Nombre:</label><br>
+      <input type="text" id="nombre" name="nombre" placeholder="Introduzca nombre" required><br><br>
       
-      <label for="apellidos">Apellidos:</label><br>
-      <input type="text" id="apellidos" name="apellidos" placeholder="Introduzca apellidos"><br><br>
+      <label>Apellidos:</label><br>
+      <input type="text" id="apellidos" name="apellidos" placeholder="Introduzca apellidos" required><br><br>
       
       <label>Cual es tu opinión de nosotros:</label><br>
-      <textarea name="opinion" rows="5" cols="50" placeholder="Mensaje"></textarea><br>
+      <textarea id="opinion" rows="5" cols="50" placeholder="Mensaje max(500car)."></textarea><br>
       
       <p class="texto">Valore del 1 al 5: <br>
         <input type="radio" name="puntuacion" value="1" required> 1
@@ -38,7 +39,7 @@
         <input type="radio" name="puntuacion" value="5" required> 5
       </p>
       
-      <input type="button" value="Enviar">
+      <input type="submit" value="Enviar">
       <input type="reset" value="Borrar">
     </form>
   </div>

@@ -6,6 +6,7 @@
       <meta name="title" content="Tramitaciones">
       <meta name="description" content="Tramitaciones">
       <link rel="stylesheet" type="text/css" href="estilo.css">
+      <script type="text/javascript" src="formPcMedida.js"></script>
     </head> 
   <header>
     <h1>TRAMITA UNA QUEJA O DEVOLUCION</h1>
@@ -19,28 +20,30 @@
     </nav>
   </header>
     <h3> Rellena el formulario </h3>
-    <label for="nombre">Nombre:</label><br>
-    <input type="text" id="nombre" name="nombre" placeholder="Introduzca nombre"><br><br>
-    
-    <label for="apellidos">Apellidos:</label><br>
-    <input type="text" id="apellidos" name="apellidos" placeholder="Introduzca apellidos"><br><br>
-    
-    <label for="correo">Email:</label><br>
-    <input type="text" id="correo" name="email" placeholder="Introduzca correo"><br><br>
-    
-    <label>Motivo:</label><br>
-    <select name="razon">
-      <option value="0">Eliga una opcion</option>
-      <option value="1">Queja</option>
-      <option value="2">Tramite de devolución</option>
-      <option value="3">Otros</option>
-    </select><br><br>
-    
-    <label>Explique especificaciones y precio:</label><br>
-    <textarea name="mensaje" rows="5" cols="50" placeholder="Mensaje"></textarea><br><br>
-    
-    <input type="button" value="Enviar">
-    <input type="reset" value="Borrar">
+    <form id="formQueja" action="" method="get" onsubmit=validarQueja()>
+      <label>Nombre:</label><br>
+      <input type="text" id="nombre" placeholder="Introduzca nombre" required><br><br>
+      
+      <label>Apellidos:</label><br>
+      <input type="text" id="apellidos" placeholder="Introduzca apellidos" required><br><br>
+      
+      <label>Email:</label><br>
+      <input type="text" id="correo" placeholder="Introduzca correo" required><br><br>
+      
+      <label>Motivo:</label><br>
+      <select id="razon" required>
+        <option value="0">Eliga una opcion</option>
+        <option value="1">Queja</option>
+        <option value="2">Tramite de devolución</option>
+        <option value="3">Otros</option>
+      </select><br><br>
+      
+      <label>Explique especificaciones y precio:</label><br>
+      <textarea id="mensaje" rows="5" cols="50" placeholder="Mensaje"></textarea><br><br>
+      
+      <input type="submit" value="Enviar">
+      <input type="reset" value="Borrar">
+    </form>
   <footer>
     <h5> PIDENOS TU PC A MEDIDA </h5>
     <h6><a href="./formularioPcAMedida.html"> Pedir presupuesto <br> </a></h6>
