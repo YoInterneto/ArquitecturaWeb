@@ -23,6 +23,13 @@ nav {
     text-align: center;
 }
 
+
+#titulo {
+    color: black;
+    background-color: orange;
+    text-align: center;
+}
+
 h1 {
     color: orange;
     background-color: black;
