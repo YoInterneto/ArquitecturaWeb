@@ -1,0 +1,116 @@
+body {
+    background-color: rgb(40, 39, 41);
+    font-family: "Segoe UI";
+}
+
+footer{
+    background-color: black;
+    text-align: center;
+}
+
+nav {
+    border: 4px double rgb(112, 73, 0);
+    background-color: rgba(255, 166, 0, 0.171);
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    margin: 0;
+    padding: 10px 10px;
+}
+
+#inicio {
+    font-weight: bold;
+    text-align: center;
+}
+
+h1 {
+    color: orange;
+    background-color: black;
+    text-align: center;
+}
+
+h2 {
+    color: orange;
+    background-color: black;
+    text-align: center;
+}
+
+h3 {
+    color: orange;
+    background-color: black;
+    text-align: center;
+}
+
+h4 {
+    color: orange;
+    text-align: center;
+}
+
+h5 {
+    color: orange;
+    background-color: black;
+    text-align: center;
+}
+
+h6 {
+    color: white;
+    font-family: "Segoe UI";
+    text-align: center;
+}
+
+p.articulos {
+    color: whitesmoke;
+    text-align: center;
+}
+
+p.texto {
+    color: whitesmoke;
+}
+
+img{
+    display:block;
+    margin:auto;
+}
+
+ul {
+    color : orange;
+    text-align: center;
+    border: 10px;
+    border-color: gray;
+}
+
+a {
+    color: whitesmoke;
+    text-align: center;
+    text-decoration: none
+}
+
+table {
+    text-align: center;
+    display: table;
+    vertical-align: top;
+    width: 100%;
+    border: 1px dashed rgba(255, 166, 0, 0.575);
+    color: whitesmoke;
+    
+}
+
+th {
+    width: 25%;
+    background-color: gray;
+    color: black;
+    text-align: center;
+    
+    border: 1px dashed rgba(255, 166, 0, 0.575);
+}
+
+td {
+    width: 25%;
+    text-align: center;
+    vertical-align: top;
+    border: 1px dashed rgba(255, 166, 0, 0.575);
+}
+
+label {
+    color: whitesmoke;
+}
