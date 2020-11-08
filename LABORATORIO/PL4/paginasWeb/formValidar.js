@@ -47,10 +47,6 @@ function validarQueja(){
     var texto = document.getElementById("mensaje").value;
     var eleccion = document.getElementById("razon").value;
 
-    alert(email);
-    alert(texto);
-    alert(eleccion);
-
     if(!validarEmail(email)){
         ok = false;
         alerta += "  -Email no válido\n";
