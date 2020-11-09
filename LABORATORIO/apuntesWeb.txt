@@ -1,0 +1,57 @@
+INSTALACIÓN Y USO DE VUE
+ -Instalamos node.js: npm i -g serve
+ -Instalamos vue global: npm install -g @vue/cli
+ -Entramos en la interfaz de Vue: vue ui
+ -Creamos nuevo proyecto
+
+SINTAXIS BASICA
+
+ `${variable}` -> hacemos un string con el valor de una variable
+
+ THIS -> referncia al componente actual
+ COMPUTED: {-> dentro del export, son variables que se pueden usar pero que antes son computadas
+ 	los métodos tiene que tener un return de un valor
+ METHODS: {-> dentro de export, donde se definen las funciones y metodos
+ MOUNTED() { -> dentro de export, lo que esté dentro se ejecturá cuando se cree/renderice el componente
+ WATCH: { -> dentro de export, cada vez que cambie algo se puede llamar un método
+	nombreVariable(nuevoValor, antiguoValor) {
+		//code
+	}
+
+ props: {variables} -> define las variables que se le pasa como parametros
+	variable1: {
+		type: String, Object...
+		required: true/false
+	}
+	variable2: {...}
+ 
+ //si ponemos : antes de algo se hace una variable, sirve para asignar a las etiquetas valores cambiantes
+ <option :value="option.value" v-for="(option, index) in itemType" :key="index">
+
+ v-model="variable" -> asigna el valor de una variable a un componente o asigna el valor de un componente a una variable
+	<select id="newItemType" v-model="selectedOption"> 	//Aqui pone el valor default de la opcion de select al que esta definido
+	<textarea id="newItem" rows="4" v-model="itemContent">	//Aqui pone el contenido de una variable al contenido de un textarea
+
+ #CONDICIONALES
+  //se suelen poner estas etiquetas dentro del <div v-if=...></div>
+ v-if = "condicion" -> si se cumple pone dentro del html el componente
+ v-else-if ="condicion" -> lo mismo que el if pero como segunda comprobacion
+ v-else -> si no se cumple nada
+
+ #BUCLES
+  //se mete dentro de div
+ v-for="(elemento, index) in data" :key="id/index"
+
+ #EVENTOS
+ @click="nombreFuncion()" -> cuando se da click llama a la funcion
+
+ //podemos crear un nuevo evento y usarlo desde el padre si lo emite el hijo
+ //creamos un método que tenga lo siguiente
+ this.$emit('nombreEvento', params)
+ //desde el padre (dentro del div) hacemos esto
+ @nombreEvento="nombreFuncion" //esta funcion ya tendra los params
+ //dentro de methods: {}
+ nombreFuncion(params){...}
+
+ 
+ 
