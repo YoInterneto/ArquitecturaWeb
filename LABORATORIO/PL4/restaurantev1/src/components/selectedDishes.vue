@@ -1,6 +1,6 @@
 <template>
   <div class="main-div">
-    <select id="selected" multiple aria-readonly="true">
+    <select class="content" id="selected" multiple aria-readonly="true">
         <option :value="option.id" v-for="(option, index) in dishes" :key="index">
             {{ option.name }}
         </option>

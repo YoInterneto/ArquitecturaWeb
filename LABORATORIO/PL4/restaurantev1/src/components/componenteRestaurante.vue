@@ -1,6 +1,16 @@
 <template>
     <div class="principal-panel">
+        <h1>RESTAURANTE</h1>
         <div class="table-dish-election">
+            <!-- - - - - - - - - - - - - -  -->
+            <!-- ELECCION DEL TIPO DE PLATO -->
+            <!-- - - - - - - - - - - - - -  -->
+            <div class="choose-dish">
+                <div class="elem-dish" v-for="(option, index) in dishOptions" :key="index">
+                    <input type="radio" name="dish" :value="option.id" v-model="typeElection">
+                        {{option.name}}
+                </div>
+            </div>
             <!-- - - - - - - - - - - - - - - -->
             <!-- ELECCION DEL NUMERO DE MESA -->
             <!-- - - - - - - - - - - - - - - -->
@@ -10,13 +20,6 @@
                         {{ option.name }}
                     </option>
                 </select>
-            </div>
-            <!-- - - - - - - - - - - - - -  -->
-            <!-- ELECCION DEL TIPO DE PLATO -->
-            <!-- - - - - - - - - - - - - -  -->
-            <div class="choose-dish" v-for="(option, index) in dishOptions" :key="index">
-                <input type="radio" name="dish" :value="option.id" v-model="typeElection">
-                {{option.name}}
             </div>
         </div>
         <div class="dishes-panel">
@@ -48,7 +51,7 @@
                 <selectedDishes v-else :dishes = this.dishesM5></selectedDishes>
             </div>
         </div>
-        <div class="options-panel">
+        <div class="options-payment-panel">
             <!-- - - - - - - - - - - - - - - - -  -->
             <!-- OPCIONES DE ELEGIR CAFE Y/O COPA -->
             <!-- - - - - - - - - - - - - - - - -  -->
@@ -169,8 +172,6 @@ export default {
             cocktailValue5: false,
 
             //Arrays de opciones a elegir de los diferentes componentes
-            //SI NO FUNCIONA PONER UN ID QUE SEA EL INDEX DE CADA UNO Y SACAR LOS PLATOS A PARTIR DE AHI
-            //BUSCAR OTRA OPCION MEJOR, ¿SE PUEDE PASAR DIRECTAMENTE EL OBJETO ELEGIDO EN UN <SELECT></SELECT>?
             dishOptions: [
                 {id: 'primero', name: 'Primeros platos'},
                 {id: 'segundo', name: 'Segundos platos'},
@@ -372,4 +373,54 @@ export default {
 
 <style>
 
+.principal-panel {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    padding: 10px 12%;
+    width: fit-content;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+.table-dish-election {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: fit-content;
+}
+
+.choose-dish {
+    text-align: left;
+    margin-left: 20px;
+}
+
+.choose-table {
+    margin-top: 20px;
+}
+
+.dishes-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: fit-content;
+    margin-top: 30px;
+}
+
+select.content {
+    width: 190px;
+    height: 100px;
+}
+
+.options-checkbox {
+    padding: 10px 5%;
+    text-align: left;
+    width: fit-content;
+    float: right;
+}
+
+.payment {
+    padding: 10px 5%;
+    text-align: right;
+    width: fit-content;
+    float: right;
+}
 </style>

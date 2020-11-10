@@ -1,6 +1,5 @@
 <template>
   <div class="contenedor-componente">
-    <strong>RESTAURANTE </strong>
     <componente-restaurante></componente-restaurante>
   </div>
 </template>
@@ -19,11 +18,10 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  background-color: rgb(40, 39, 41);
+  font-family: "Segoe UI";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

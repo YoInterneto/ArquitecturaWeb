@@ -1,6 +1,6 @@
 <template>
   <div class="main-div">
-    <select id="options" v-model="dishElection" @dblclick="addDish(dishElection, dishes)" multiple>
+    <select class="content" id="options" v-model="dishElection" @dblclick="addDish(dishElection, dishes)" multiple>
       <option :value="option.id" v-for="(option, index) in dishes" :key="index">
         {{ option.name }}  ({{ option.price}}€)
       </option>
@@ -38,12 +38,4 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>

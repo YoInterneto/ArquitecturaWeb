@@ -2,7 +2,7 @@
   <div class="main-div">
     <input type="checkbox" id="cocktail" v-if="this.cocktailValue" checked @click="toggleValue()">
     <input type="checkbox" id="cocktail" v-else @click="toggleValue()">
-    <label for="coffe"> con café</label>
+    <label for="coffe"> con copa</label>
   </div>
 </template>
 
