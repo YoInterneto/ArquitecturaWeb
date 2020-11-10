@@ -6,7 +6,7 @@ INSTALACIÓN Y USO DE VUE
 
 SINTAXIS BASICA
 
- `${variable}` -> hacemos un string con el valor de una variable
+ `${variable}` -> hacemos un string con el valor de una variable=
 
  THIS -> referncia al componente actual
  COMPUTED: {-> dentro del export, son variables que se pueden usar pero que antes son computadas
@@ -31,7 +31,7 @@ SINTAXIS BASICA
  v-model="variable" -> asigna el valor de una variable a un componente o asigna el valor de un componente a una variable
 	<select id="newItemType" v-model="selectedOption"> 	//Aqui pone el valor default de la opcion de select al que esta definido
 	<textarea id="newItem" rows="4" v-model="itemContent">	//Aqui pone el contenido de una variable al contenido de un textarea
-
+	//es decir, si no se guarda
  #CONDICIONALES
   //se suelen poner estas etiquetas dentro del <div v-if=...></div>
  v-if = "condicion" -> si se cumple pone dentro del html el componente
