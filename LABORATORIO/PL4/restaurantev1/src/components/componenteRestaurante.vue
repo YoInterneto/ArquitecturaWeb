@@ -376,7 +376,7 @@ export default {
 .principal-panel {
     display: grid;
     grid-template-rows: auto auto auto;
-    padding: 10px 12%;
+    padding: 10px 30px 30px;
     width: fit-content;
     background-color: whitesmoke;
     border-radius: 5px;
