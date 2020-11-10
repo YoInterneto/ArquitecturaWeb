@@ -1,15 +1,21 @@
 <template>
     <div class="principal-panel">
         <div class="table-dish-election">
+            <!-- - - - - - - - - - - - - - - -->
+            <!-- ELECCION DEL NUMERO DE MESA -->
+            <!-- - - - - - - - - - - - - - - -->
             <div class="choose-table">
-                <select id="table" v-model="tableElection" @change="showTable(tableElection)">
+                <select id="table" v-model="tableElection">
                     <option :value="option.id" v-for="(option, index) in tableOptions" :key="index">
                         {{ option.nombre }}
                     </option>
                 </select>
             </div>
+            <!-- - - - - - - - - - - - - -  -->
+            <!-- ELECCION DEL TIPO DE PLATO -->
+            <!-- - - - - - - - - - - - - -  -->
             <div class="choose-dish" v-for="(option, index) in dishOptions" :key="index">
-                <input type="radio" name="dish" :value="option.id" @click="showDishes(option)" v-model="typeElection">
+                <input type="radio" name="dish" :value="option.id" v-model="typeElection">
                 {{option.nombre}}
             </div>
         </div>
@@ -38,35 +44,65 @@
             <!-- TODAS LOS PLATOS ELEGIDOS POR UNA MESA -->
             <!-- - - - - - - - - - - - - - - - - - - -  -->
             <div class="selected-panel">
-                <select id="selected1" v-if="tableElection == 'mesa1'" multiple>
+                <select id="selected1" v-if="tableElection == 'mesa1'" multiple aria-readonly="true">
                     <option :value="option.id" v-for="(option, index) in dishesM1" :key="index">
                         {{ option.nombre }}
                     </option>
                 </select>
-                <select id="selected1" v-else-if="tableElection == 'mesa2'" multiple>
+                <select id="selected1" v-else-if="tableElection == 'mesa2'" multiple aria-readonly="true">
                     <option :value="option.id" v-for="(option, index) in dishesM2" :key="index">
                         {{ option.nombre }}
                     </option>
                 </select>
-                <select id="selected1" v-else-if="tableElection == 'mesa3'" multiple>
+                <select id="selected1" v-else-if="tableElection == 'mesa3'" multiple aria-readonly="true">
                     <option :value="option.id" v-for="(option, index) in dishesM3" :key="index">
                         {{ option.nombre }}
                     </option>
                 </select>
-                <select id="selected1" v-else-if="tableElection == 'mesa4'" multiple>
+                <select id="selected1" v-else-if="tableElection == 'mesa4'" multiple aria-readonly="true">
                     <option :value="option.id" v-for="(option, index) in dishesM4" :key="index">
                         {{ option.nombre }}
                     </option>
                 </select>
-                <select id="selected1" v-else multiple>
+                <select id="selected1" v-else multiple aria-readonly="true">
                     <option :value="option.id" v-for="(option, index) in dishesM5" :key="index">
                         {{ option.nombre }}
                     </option>
                 </select>
             </div>
         </div>
-        <div class="payment-panel" >
-
+        <div class="options-panel">
+            <!-- - - - - - - - - - - - - - - - -  -->
+            <!-- OPCIONES DE ELEGIR CAFE Y/O COPA -->
+            <!-- - - - - - - - - - - - - - - - -  -->
+            <div class="options-checkbox">
+                <div class="coffe-option">
+                    <input type="checkbox" id="coffe" v-model="coffeElection">
+                    <label for="coffe" v-if="coffeElection"> con café</label>
+                    <label for="coffe" v-else> sin café</label>
+                </div>
+                <div class="cocktail-option">
+                    <input type="checkbox" id="cocktail" v-model="cocktailElection">
+                    <label for="cocktail" v-if="cocktailElection"> con copa</label>
+                    <label for="cocktail" v-else> sin copa</label>
+                </div>
+            </div>
+            <!-- - - - - - - - - - - - - - - - - - - - - - -   -->
+            <!-- DINERO A PAGAR TOTAL DE LA CUENTA DE UNA MESA -->
+            <!-- - - - - - - - - - - - - - - - - - - - - - -   -->
+            <div class="payment">
+                <div class="price">
+                    <label for="price">Total: </label>
+                    <input type="text" id="price" v-if="tableElection == 'mesa1'" :value="totalM1" readonly>
+                    <input type="text" id="price" v-else-if="tableElection == 'mesa2'" :value="totalM2" readonly>
+                    <input type="text" id="price" v-else-if="tableElection == 'mesa3'" :value="totalM3" readonly>
+                    <input type="text" id="price" v-else-if="tableElection == 'mesa4'" :value="totalM4" readonly>
+                    <input type="text" id="price" v-else :value="totalM5" readonly>
+                </div>
+                <div class="pay">
+                    <button id="paid" @click="payTable()">Pagado</button>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -86,8 +122,8 @@ export default {
             tableElection: 'mesa1',
             typeElection: 'primero',
             dishElection: [],
-            coffeElection: false, //PUEDE QUE SEA TRUE O FALSE YA QUE ES UNA CHECKBOX
-            coctelElection: false, //PUEDE QUE SEA TRUE O FALSE YA QUE ES UNA CHECKBOX
+            coffeElection: false,
+            cocktailElection: false,
 
             //Precio de la cuenta de la mesa
             totalM1: 0,
@@ -167,33 +203,70 @@ export default {
                         id: dish.id,
                         nombre: dish.nombre,
                     })
+                    this.totalM1 += dish.precio;
                     break;
                 case 'mesa2':
                     this.dishesM2.unshift({
                         id: dish.id,
                         nombre: dish.nombre,
                     })
+                    this.totalM2 += dish.precio;
                     break;
                 case 'mesa3':
                     this.dishesM3.unshift({
                         id: dish.id,
                         nombre: dish.nombre,
                     })
+                    this.totalM3 += dish.precio;
                     break;
                 case 'mesa4':
                     this.dishesM4.unshift({
                         id: dish.id,
                         nombre: dish.nombre,
                     })
+                    this.totalM4 += dish.precio;
                     break;
                 case 'mesa5':
                     this.dishesM5.unshift({
                         id: dish.id,
                         nombre: dish.nombre,
                     })
+                    this.totalM5 += dish.precio;
                     break;
                 default:
-                    console.log("no hace nada");
+                    console.log(`ERROR: Número de mesa incorrecto - valor ${this.tableElection}`);
+                    break;
+            }
+        },
+        payTable(){
+            switch (this.tableElection) {
+                case 'mesa1':
+                    alert(`Se han pagado ${this.totalM1}€ en ${this.tableElection}`)
+                    this.totalM1 = 0;
+                    this.dishesM1 = [];
+                    break;
+                case 'mesa2':
+                    alert(`Se han pagado ${this.totalM2}€ en ${this.tableElection}`)
+                    this.totalM2 = 0;
+                    this.dishesM2 = [];
+                    break;
+                case 'mesa3':
+                    alert(`Se han pagado ${this.totalM3}€ en ${this.tableElection}`)
+                    this.totalM3 = 0;
+                    this.dishesM3 = [];
+                    break;
+                case 'mesa4':
+                    alert(`Se han pagado ${this.totalM4}€ en ${this.tableElection}`)
+                    this.totalM4 = 0;
+                    this.dishesM4 = [];
+                    break;
+                case 'mesa5':
+                    alert(`Se han pagado ${this.totalM5}€ en ${this.tableElection}`)
+                    this.totalM5 = 0;
+                    this.dishesM5 = [];
+                    break;
+                default:
+                    console.log(`ERROR: Número de mesa incorrecto - valor ${this.tableElection}`);
                     break;
             }
         }
