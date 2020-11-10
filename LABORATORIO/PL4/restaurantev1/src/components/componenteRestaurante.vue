@@ -52,17 +52,50 @@
             <!-- - - - - - - - - - - - - - - - -  -->
             <!-- OPCIONES DE ELEGIR CAFE Y/O COPA -->
             <!-- - - - - - - - - - - - - - - - -  -->
-            <!-- Se puede poner de que cada mesa tenga su propia opción de checkbox  -->
             <div class="options-checkbox">
                 <div class="coffe-option">
-                    <input type="checkbox" id="coffe" v-model="coffeElection">
-                    <label for="coffe" v-if="coffeElection"> con café</label>
-                    <label for="coffe" v-else> sin café</label>
+                    <optionCoffe v-if="this.tableElection == 'mesa1'"
+                        :coffeValue = coffeValue1
+                        @changecoffe="toggleCoffe"
+                    />
+                    <optionCoffe v-else-if="this.tableElection == 'mesa2'"
+                        :coffeValue = coffeValue2
+                        @changecoffe="toggleCoffe"
+                    />
+                    <optionCoffe v-else-if="this.tableElection == 'mesa3'"
+                        :coffeValue = coffeValue3
+                        @changecoffe="toggleCoffe"
+                    />
+                    <optionCoffe v-else-if="this.tableElection == 'mesa4'"
+                        :coffeValue = coffeValue4
+                        @changecoffe="toggleCoffe"
+                    />
+                    <optionCoffe v-else
+                        :coffeValue = coffeValue5
+                        @changecoffe="toggleCoffe"
+                    />
                 </div>
                 <div class="cocktail-option">
-                    <input type="checkbox" id="cocktail" v-model="cocktailElection">
-                    <label for="cocktail" v-if="cocktailElection"> con copa</label>
-                    <label for="cocktail" v-else> sin copa</label>
+                    <optionCocktail v-if="this.tableElection == 'mesa1'"
+                        :cocktailValue = cocktailValue1
+                        @changecocktail="toggleCocktail"
+                    />
+                    <optionCocktail v-else-if="this.tableElection == 'mesa2'"
+                        :cocktailValue = cocktailValue2
+                        @changecocktail="toggleCocktail"
+                    />
+                    <optionCocktail v-else-if="this.tableElection == 'mesa3'"
+                        :cocktailValue = cocktailValue3
+                        @changecocktail="toggleCocktail"
+                    />
+                    <optionCocktail v-else-if="this.tableElection == 'mesa4'"
+                        :cocktailValue = cocktailValue4
+                        @changecocktail="toggleCocktail"
+                    />
+                    <optionCocktail v-else
+                        :cocktailValue = cocktailValue5
+                        @changecocktail="toggleCocktail"
+                    />
                 </div>
             </div>
             <!-- - - - - - - - - - - - - - - - - - - - - - -   -->
@@ -88,13 +121,17 @@
 <script>
 import selectedDishes from '@/components/selectedDishes'
 import optionDishes from '@/components/optionDishes'
+import optionCoffe from '@/components/optionCoffe'
+import optionCocktail from '@/components/optionCocktail'
 
 export default {
     name: "componenteRestaurante",
 
     components: {
         selectedDishes,
-        optionDishes
+        optionDishes,
+        optionCoffe,
+        optionCocktail,
     },
 
     data(){
@@ -104,8 +141,6 @@ export default {
             tableElection: 'mesa1',
             typeElection: 'primero',
             dishElection: [],
-            coffeElection: false,
-            cocktailElection: false,
 
             //price de la cuenta de la mesa
             totalM1: 0,
@@ -120,6 +155,18 @@ export default {
             dishesM3: [],
             dishesM4: [],
             dishesM5: [],
+
+            //Valores de los checkbox
+            coffeValue1: false,
+            coffeValue2: false,
+            coffeValue3: false,
+            coffeValue4: false,
+            coffeValue5: false,
+            cocktailValue1: false,
+            cocktailValue2: false,
+            cocktailValue3: false,
+            cocktailValue4: false,
+            cocktailValue5: false,
 
             //Arrays de opciones a elegir de los diferentes componentes
             //SI NO FUNCIONA PONER UN ID QUE SEA EL INDEX DE CADA UNO Y SACAR LOS PLATOS A PARTIR DE AHI
@@ -213,34 +260,111 @@ export default {
         payTable(){
             switch (this.tableElection) {
                 case 'mesa1':
-                    alert(`Se han pagado ${this.totalM1}€ en ${this.tableElection}`)
-                    this.totalM1 = 0;
-                    this.dishesM1 = [];
+                    if (this.totalM1 == 0) {
+                        alert(`No hay nada que pagar en ${this.tableElection}`)
+                    } else {
+                        alert(`Se han pagado ${this.totalM1}€ en ${this.tableElection}`)
+                        this.totalM1 = 0;
+                        this.dishesM1 = [];
+                        this.coffeValue1 = false;
+                        this.cocktailValue1 = false;
+                    }
                     break;
                 case 'mesa2':
-                    alert(`Se han pagado ${this.totalM2}€ en ${this.tableElection}`)
-                    this.totalM2 = 0;
-                    this.dishesM2 = [];
+                    if (this.totalM2 == 0) {
+                        alert(`No hay nada que pagar en ${this.tableElection}`)
+                    } else {
+                        alert(`Se han pagado ${this.totalM2}€ en ${this.tableElection}`)
+                        this.totalM2 = 0;
+                        this.dishesM2 = [];
+                        this.coffeValue2 = false;
+                        this.cocktailValue2 = false;
+                    }
                     break;
                 case 'mesa3':
-                    alert(`Se han pagado ${this.totalM3}€ en ${this.tableElection}`)
-                    this.totalM3 = 0;
-                    this.dishesM3 = [];
+                    if (this.totalM3 == 0) {
+                        alert(`No hay nada que pagar en ${this.tableElection}`)
+                    } else {
+                        alert(`Se han pagado ${this.totalM3}€ en ${this.tableElection}`)
+                        this.totalM3 = 0;
+                        this.dishesM3 = [];
+                        this.coffeValue3 = false;
+                        this.cocktailValue3 = false;
+                    }
                     break;
                 case 'mesa4':
-                    alert(`Se han pagado ${this.totalM4}€ en ${this.tableElection}`)
-                    this.totalM4 = 0;
-                    this.dishesM4 = [];
+                    if (this.totalM4 == 0) {
+                        alert(`No hay nada que pagar en ${this.tableElection}`)
+                    } else {
+                        alert(`Se han pagado ${this.totalM4}€ en ${this.tableElection}`)
+                        this.totalM4 = 0;
+                        this.dishesM4 = [];
+                        this.coffeValue4 = false;
+                        this.cocktailValue4 = false;
+                    }
                     break;
                 case 'mesa5':
-                    alert(`Se han pagado ${this.totalM5}€ en ${this.tableElection}`)
-                    this.totalM5 = 0;
-                    this.dishesM5 = [];
+                    if (this.totalM5 == 0) {
+                        alert(`No hay nada que pagar en ${this.tableElection}`)
+                    } else {
+                        alert(`Se han pagado ${this.totalM5}€ en ${this.tableElection}`)
+                        this.totalM5 = 0;
+                        this.dishesM5 = [];
+                        this.coffeValue5 = false;
+                        this.cocktailValue5 = false;
+                    }
                     break;
                 default:
                     console.log(`ERROR: Número de mesa incorrecto - valor ${this.tableElection}`);
                     break;
             }
+        },
+        toggleCoffe(){
+            switch (this.tableElection){
+                case 'mesa1':
+                    this.coffeValue1 = !this.coffeValue1;
+                    break;
+                case 'mesa2':
+                    this.coffeValue2 = !this.coffeValue2;
+                    break;
+                case 'mesa3':
+                    this.coffeValue3 = !this.coffeValue3;
+                    break;
+                case 'mesa4':
+                    this.coffeValue4 = !this.coffeValue4;
+                    break;
+                case 'mesa5':
+                    this.coffeValue5 = !this.coffeValue5;
+                    break;
+                default:
+                    console.log(`ERROR: Número de mesa incorrecto - valor ${this.tableElection}`);
+                    break;
+            }
+        },
+        toggleCocktail(){
+            switch (this.tableElection){
+                case 'mesa1':
+                    this.cocktailValue1 = !this.cocktailValue1;
+                    break;
+                case 'mesa2':
+                    this.cocktailValue2 = !this.cocktailValue2;
+                    break;
+                case 'mesa3':
+                    this.cocktailValue3 = !this.cocktailValue3;
+                    break;
+                case 'mesa4':
+                    this.cocktailValue4 = !this.cocktailValue4;
+                    break;
+                case 'mesa5':
+                    this.cocktailValue5 = !this.cocktailValue5;
+                    break;
+                default:
+                    console.log(`ERROR: Número de mesa incorrecto - valor ${this.tableElection}`);
+                    break;
+            }
+        },
+        assignType(value){
+            this.typeElection = value;
         }
     },
 }
