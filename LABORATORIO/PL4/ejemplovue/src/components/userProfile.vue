@@ -47,39 +47,39 @@
 import infoItem from '@/components/infoItem';
 
 export default {
-  name: "userProfile",
+    name: "userProfile",
 
-  components: {
-      infoItem
-  },
+    components: {
+        infoItem
+    },
 
-  data() {
-    return {
+    data() {
+        return {
 
-        selectedOption: 'draft', //esto es por ejemplo lo de la mesa, la opcion que tenemos elegida
+            selectedOption: 'draft', //esto es por ejemplo lo de la mesa, la opcion que tenemos elegida
 
-        itemContent: '', //aqui seria un array con los platos
+            itemContent: '', //aqui seria un array con los platos
 
-        itemType: [
-            {value: 'draft', name: 'Draft'},
-            {value: 'instant', name: 'Instant item'}
-        ],
-
-        followers: 0,
-
-        user: {
-            id: 1,
-            username: 'YunggChino',
-            first_name: 'Alberto',
-            last_name: 'Gonzalez',
-            email: 'albergonmar@gmail.com',
-            isAdmin: false,
-            info: [
-                {id: 1, content: 'My name is Alberto I am 20 years old'},
-                {id: 2, content: 'I am rn studying at the University'},
+            itemType: [
+                {value: 'draft', name: 'Draft'},
+                {value: 'instant', name: 'Instant item'}
             ],
+
+            followers: 0,
+
+            user: {
+                id: 1,
+                username: 'YunggChino',
+                first_name: 'Alberto',
+                last_name: 'Gonzalez',
+                email: 'albergonmar@gmail.com',
+                isAdmin: false,
+                info: [
+                    {id: 1, content: 'My name is Alberto I am 20 years old'},
+                    {id: 2, content: 'I am rn studying at the University'},
+                ],
+            }
         }
-    }
   },
 
   computed: {
