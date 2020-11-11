@@ -1,0 +1,8 @@
+Para visualizar de forma correcta el componente:
+	1. Abrir cmd en la carpeta componente
+	2. Instalar serve (en caso de que no lo tengas)
+		> npm install -g serve
+	3. Ejecutar serve en la carpeta componente
+		.../componente> serve
+	4. Entrar entrar en el servidor creado mediante url
+		Local: url
