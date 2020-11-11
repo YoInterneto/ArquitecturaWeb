@@ -1,7 +1,9 @@
 {
-  "name": "restaurantev1",
+  "name": "@yointerneto/restaurantev1",
   "version": "0.1.0",
-  "private": true,
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
