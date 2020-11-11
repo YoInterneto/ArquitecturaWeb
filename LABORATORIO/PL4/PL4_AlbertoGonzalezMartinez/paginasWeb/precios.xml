@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml stylesheet type="html/xsl" href="precios.xsl"?>
+<productos>
+   <producto>
+        <tipo> Monitor </tipo>
+        <nombre> MSI Optix Mag 27 </nombre>
+        <precio_antes> 280€ </precio_antes>
+        <precio_despues> 240€ </precio_despues>
+   </producto>
+
+   <producto>
+        <tipo> Monitor </tipo>
+        <nombre> BenQ ZOWIE XL2411P 24 </nombre>
+        <precio_antes> 210€ </precio_antes>
+        <precio_despues> 190€ </precio_despues>
+   </producto>
+
+   <producto>
+        <tipo> Monitor </tipo>
+        <nombre> AOC Gaming 27G2U 27 </nombre>
+        <precio_antes> 200€ </precio_antes>
+        <precio_despues> 169€ </precio_despues>
+   </producto>
+
+   <producto>
+        <tipo> Periferico </tipo>
+        <nombre> HyperX Cloud Auriculares </nombre>
+        <precio_antes> 160€ </precio_antes>
+        <precio_despues> 129€ </precio_despues>
+   </producto>
+
+   <producto>
+        <tipo> Periferico </tipo>
+        <nombre> Logitech g203 </nombre>
+        <precio_antes> 40€ </precio_antes>
+        <precio_despues> 35€ </precio_despues>
+   </producto>
+
+   <producto>
+        <tipo> Periferico </tipo>
+        <nombre> Newskill Suiko </nombre>
+        <precio_antes> 120€ </precio_antes>
+        <precio_despues> 90€ </precio_despues>
+   </producto>
+
+   <producto>
+        <tipo> Componente </tipo>
+        <nombre> Gigabyte GTX 3090 </nombre>
+        <precio_antes> 1690€ </precio_antes>
+        <precio_despues> 1550€ </precio_despues>
+   </producto>
+
+   <producto>
+        <tipo> Componente </tipo>
+        <nombre> Intel i9-9900k </nombre>
+        <precio_antes> 431€</precio_antes>
+        <precio_despues> 400€ </precio_despues>
+   </producto>
+
+   <producto>
+        <tipo> Componente </tipo>
+        <nombre> MSI Mpg Z390 Gaming Plus </nombre>
+        <precio_antes> 110€ </precio_antes>
+        <precio_despues> 90€ </precio_despues>
+   </producto>
+
+   <producto>
+        <tipo> Software </tipo>
+        <nombre> Windows 10 Home </nombre>
+        <precio_antes> 110€ </precio_antes>
+        <precio_despues> 90€ </precio_despues>
+   </producto>
+
+   <producto>
+        <tipo> Software </tipo>
+        <nombre> Windows 10 Pro </nombre>
+        <precio_antes> 120€ </precio_antes>
+        <precio_despues> 100€ </precio_despues>
+   </producto>
+
+</productos>

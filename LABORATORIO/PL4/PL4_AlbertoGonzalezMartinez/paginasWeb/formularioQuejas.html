@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang = "es">
+  <head>    
+      <title> Tramitaciones - ElReyDelPc </title>    
+      <meta charset="UTF-8">
+      <meta name="title" content="Tramitaciones">
+      <meta name="description" content="Tramitaciones">
+      <link rel="stylesheet" type="text/css" href="estilo.css">
+      <script type="text/javascript" src="formValidar.js"></script>
+    </head> 
+  <header>
+    <h1>TRAMITA UNA QUEJA O DEVOLUCION</h1>
+    <nav>
+      <a href="./index.html"> INICIO </a>
+      <a href="./perifericos.html"> PERIFERICOS </a>
+      <a href="./monitores.html"> MONITORES </a>
+      <a href="./software.html"> SOFTWARE </a>
+      <a href="./componentes.html"> COMPONENTES </a>
+      <a href="./precios.html"> REBAJAS </a>
+    </nav>
+  </header>
+    <h3> Rellena el formulario </h3>
+    <form id="formQueja" action="" method="get" onsubmit=validarQueja()>
+      <label>Nombre:</label><br>
+      <input type="text" id="nombre" placeholder="Introduzca nombre" required><br><br>
+      
+      <label>Apellidos:</label><br>
+      <input type="text" id="apellidos" placeholder="Introduzca apellidos" required><br><br>
+      
+      <label>Email:</label><br>
+      <input type="text" id="correo" placeholder="Introduzca correo" required><br><br>
+      
+      <label>Motivo:</label><br>
+      <select id="razon" required>
+        <option value="0">Eliga una opcion</option>
+        <option value="1">Queja</option>
+        <option value="2">Tramite de devolución</option>
+        <option value="3">Otros</option>
+      </select><br><br>
+      
+      <label>Explique especificaciones y precio:</label><br>
+      <textarea id="mensaje" rows="5" cols="50" placeholder="Mensaje"></textarea><br><br>
+      
+      <input type="submit" value="Enviar">
+      <input type="reset" value="Borrar">
+    </form>
+  <footer>
+    <h5> PIDENOS TU PC A MEDIDA </h5>
+    <h6><a href="./formularioPcAMedida.html"> Pedir presupuesto <br> </a></h6>
+    <h5> CONTACTA CON NOSOTROS </h5>
+    <h6><a href="./contacUs.html"> Contáctanos <br> </a></h6>
+    <h6><a href="./formularioQuejas.html"> Quejas y devoluciones <br> </a></h6>
+    <h6><a href="./formularioOpina.html"> Opina <br> </a></h6>
+  </footer>
+</html>
