@@ -1,4 +1,12 @@
-Para visualizar de forma correcta el componente:
+Para poder visualizar y hacer deploy de forma correcta del componente, debe de estar en un servidor, hay
+dos formas de hacer el deploy probar el componente
+  Opcion A)Extension VS Code
+	1. Ir a marketplace e instalar la extension Live Server
+	2. Con la carpeta de componente abierta en VS Code ir a la parte infererior derecha y darle a GoLive
+	3. Se abre la página con el componente para poder probar su funcionamiento
+		
+  Opcion B)Node.js y npm serve
+	1. Instalar node.js
 	1. Abrir cmd en la carpeta componente
 	2. Instalar serve (en caso de que no lo tengas)
 		> npm install -g serve
